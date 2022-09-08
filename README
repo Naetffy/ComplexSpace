@@ -28,45 +28,114 @@ Uno de los unicos requesitos para el uso de la libreria es tener instalado pyhto
 
 Intalacion:
 Para la instalacion de esta libreria se puede proceder de dos maneras.
-    1.En la carpeta en la que se desea descargar la libreria hacer el uso de git y el comando git clone https://github.com/Naetffy/VectSpace.git de forma que se obtiene de manera directa la descarga completa de todos los archivos del repositorio dentro de una carpeta llamada VectSpace, dentro de la cual esta la libreria.
-    2.En GitHub hacer la instalacion del repositorio descargandolo como un ZIP y extrayendo este en la carpeta en la cual se quiere hacer el uso de la libreria, esto nos creara una carpeta con el nombre "VectSpace-master", este lo cambiamos a "VectSpace".
+    1.En la carpeta en la que se desea descargar la libreria hacer el uso de git y el comando git clone https://github.com/Naetffy/ComplexSpace.git de forma que se obtiene de manera directa la descarga completa de todos los archivos del repositorio dentro de una carpeta llamada ComplexSpace, dentro de la cual esta la libreria.
+    2.En GitHub hacer la instalacion del repositorio descargandolo como un ZIP y extrayendo este en la carpeta en la cual se quiere hacer el uso de la libreria, esto nos creara una carpeta con el nombre "ComplexSpace-master", este lo cambiamos a "ComplexSpace".
+
+Aclaraciones para su uso:
+Las funciones de esta libreria reciben matrices vectores o escalares como parametros, todas los numeros se representan meiante su numero complejo de la forma (a,b) siendo a la parte real del numero y b la parte imaginaria, por ende si queremos pasar un escalar como parametro debemos pasar la tupla (a,b) siendo a y b cualquier valor real. Para la representacion de vectores usaremos listas, con n cantidad de numeros de la forma (a,b). Para la representacion de matrices usaremos listas dentro de listas de la forma [[(a,b)]] la anterior representa la matriz 1*1 donde (a,b) es la representacion de un complejo.
 
 Implemetacion:
-Para implementar la libreria en un proyecto se debe hacer el uso de la siguiente sintaxis from VectSpace import Complex, posteriormente se puede hacer el uso de cualquiera de las siguientes funciones:
-    1. Suma = Complex.sum() 
-    Como  parametro acepta 4 numeros (Parte real del numero 1, Parte imaginaria del numero 1, Parte real del numero 2, Parte imaginaria del numero 2)
+Para implementar la libreria en un proyecto se debe hacer el uso de la siguiente sintaxis from ComplexSpace import Complex2, posteriormente se puede hacer el uso de cualquiera de las siguientes funciones:
+    1. Adición de vectores complejos = Complex2.SumV() 
+    Como parametro acepta 2 listas.
+    Ejemplo:
+    Complex2.SumV([(1,2),(2,2)],[(3,2),(1,1)])
+    retorna 1 vector
 
-    2. Resta = Complex.rest() 
-    Como  parametro acepta 4 numeros (Parte real del numero 1, Parte imaginaria del numero 1, Parte real del numero 2, Parte imaginaria del numero 2)
+    2. Inverso (aditivo) de un vector complejo = Complex2.InvV() 
+    Como parametro acepta 1 lista.
+    Ejemplo:
+    Complex2.InvV([(1,2),(2,2)])
+    retorna 1 vector
 
-    3. Producto = Complex.pro() 
-    Como  parametro acepta 4 numeros (Parte real del numero 1, Parte imaginaria del numero 1, Parte real del numero 2, Parte imaginaria del numero 2)
+    3. Multiplicación de un escalar por un vector complejo = Complex2.eVec() 
+    Como parametro acepta 1 escalar complejo y 1 lista.
+    Ejemplo:
+    Complex2.eVec((1,2),[(1,2),(2,2),(3,3),(3,2),(1,1),(1,1)])
+    retorna 1 vector
 
-    4. Divison = Complex.div() 
-    Como  parametro acepta 4 numeros (Parte real del numero 1, Parte imaginaria del numero 1, Parte real del numero 2, Parte imaginaria del numero 2)
+    4. Adición de matrices complejas = Complex2.SumM() 
+    Como  parametro acepta 2 matrices.
+    Ejemplo:
+    Complex2.SumM([[(1,2),(2,1)],[(3,2),(5,4)]],[[(1,2),(2,1)],[(3,2),(5,4)]])
+    retorna 1 matriz
 
-    5. Modulo = Complex.mod() 
-    Como parametro acepta 2 numeros (Parte real del numero complejo, Parte imaginaria del numero complejo)
+    5. Inverso (aditivo) de una matriz compleja = Complex2.InvM() 
+    Como  parametro acepta 1 Matriz.
+    Complex2.InvM([[(1,2),(2,2)],[(3,3),(3,2)],[(1,1),(1,1)]])
+    retorna 1 matriz 
 
-    6. Conjugado = Complex.conj()
-    Como parametro acepta 2 numeros (Parte real del numero complejo, Parte imaginaria del numero complejo)
+    6. Multiplicación de un escalar por una matriz compleja = Complex2.eMat() 
+    Como  parametro acepta 1 escalar complejo y una Matriz.
+    Complex2.eMat((1,2),[[(1,2),(2,2)],[(3,3),(3,2)],[(1,1),(1,1)]])
+    retorna 1 matriz
 
-    7. Conversion de cartesianas a polares = Complex.ctop()
-    Como parametro acepta 2 numeros (Parte real del numero complejo, Parte imaginaria del numero complejo)
-    
-    8. Fase de un complejo = Complex.fase()
-    Como parametro acepta 2 numeros (Parte real del numero complejo, Parte imaginaria del numero complejo)
+    7. Transpuesta de una matriz/vector = Complex2.Tra() 
+    Como  parametro acepta 1 Matriz o Vector.
+    Complex2.Tra([[(1,2),(2,2),(5,5)],[(3,3),(3,2),(4,4)],[(1,1),(1,1),(6,4)]])
+    retorna 1 matriz o vector
+
+    8. Conjugada de una matriz/vector = Complex2.Conj() 
+    Como  parametro acepta 1 Matriz o Vector.
+    Complex2.Conj([[(1,2),(2,2),(5,5)],[(3,3),(3,2),(4,4)],[(1,1),(1,1),(6,4)]])
+    retorna 1 matriz o vector
+
+    9. Adjunta (daga) de una matriz/vector = Complex2.Adj() 
+    Como  parametro acepta 1 Matriz o Vector.
+    Complex2.Adj([[(1,2),(2,2),(5,5)],[(3,3),(3,2),(4,4)],[(1,1),(1,1),(6,4)]])
+    retorna 1 matriz o vector
+
+    10. Producto de dos matrices (de tamaños compatibles) = Complex2.MulM() 
+    Como  parametro acepta 2 Matrices.
+    Complex2.MulM([[(1,1),(2,2),(3,3)],[(3,3),(4,4),(5,5)],[(3,3),(4,4),(5,5)]],[[(1,1),(2,2),(6,6)],[(3,3),(4,4),(5,5)],[(3,3),(4,4),(5,5)]])
+    retorna 1 matriz
+
+    11. Función para calcular la "acción" de una matriz sobre un vector = Complex2.AcMV() 
+    Como  parametro acepta una matriz y un vector.
+    Complex2.AcMV([[(1,1),(2,2),(3,3)],[(3,3),(4,4),(5,5)],[(3,3),(4,4),(5,5)]],[(1,1),(2,2),(3,3)])
+    retorna 1 vector
+
+    12. Producto interno de dos vectores = Complex2.Priv() 
+    Como  parametro acepta 2 vectores.
+    Complex2.PriV([(1,2),(2,2),(3,3)],[(3,2),(1,1),(1,1)])
+    retorna un complejo 
+
+    13. Norma de un vector= Complex2.NorV() 
+    Como  parametro acepta 1 vector.
+    Complex2.NorV([(4,3),(6,-4),(14,-7),(0,13)])
+    retorna un flotante
+
+    14. Distancia entre dos vectores = Complex2.DisV() 
+    Como  parametro acepta 2 vectores.
+    Complex2.DisV([(3,0),(1,0),(2,0)],[(2,0),(2,0),(-1,0)])
+    retorna un flotante
+
+    15. Revisar si una matriz es unitaria = Complex2.Unit() 
+    Como  parametro acepta 1 Matriz.
+    Complex2.Unit([[(1,0),(0,0)],[(0,0),(1,0)]])
+    retorna un valor booleano correspondiente a si es o no una matriz unitaria
+
+    16. Revisar si una matriz es Hermitiana= Complex2.Herm() 
+    Como  parametro acepta 1 Matriz.
+    Complex2.Herm([[(1,0),(0,-1)],[(0,1),(1,0)]])
+    retorna un valor booleano correspondiente a si es o no una matriz hermitana
+
+    17. Producto tensor de dos matrices/vectores = Complex2.Port() 
+    Como  parametro acepta 2 Matriz o 2 vectores o 1 matriz y 1 vector.
+    Complex2.Prot([[(1,1),(2,2),(3,3)]],[[(1,1),(2,2),(6,6)],[(3,3),(4,4),(5,5)],[(3,3),(4,4),(5,5)]])
+    retorna una matriz o un vector
+
 
 Ejemplo del codigo para el funcionamiento:
 
-from VectSpace import Complex
+from ComplexSpace import Complex2
 
-Resultado = Complex.sum(1,2,4,5)
-//Representa la suma entre (1+2i)+(4+5i)
+Resultado = Complex2.eVec((1,2),[(1,2),(2,2),(3,3),(3,2),(1,1),(1,1)])
+//Representa la multiplicacion del complejo (1+2i)*[1+2i,2+2i,3+3i,3+2i,1+i,1+i]
 
 print(Resultado)
 
-//El output sera 5+7i
+//El output sera ['-1-2i', '-2-2i', '-3-3i', '-3-2i', '-1-1i', '-1-1i']
 
 Fin codigo ejemplo
 
