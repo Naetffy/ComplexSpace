@@ -1,0 +1,79 @@
+Quantum Calculator in the space
+Este proyecto es una libreria de una calculadora de numeros complejos, la cual permite operaciones como:
+    - Adición de vectores complejos.
+    - Inverso (aditivo) de un vector complejo.
+    - Multiplicación de un escalar por un vector complejo.
+    - Adición de matrices complejas.
+    - Inversa (aditiva) de una matriz compleja.
+    - Multiplicación de un escalar por una matriz compleja.
+    - Transpuesta de una matriz/vector
+    - Conjugada de una matriz/vector
+    - Adjunta (daga) de una matriz/vector
+    - Producto de dos matrices (de tamaños compatibles)
+    - Función para calcular la "acción" de una matriz sobre un vector.
+    - Producto interno de dos vectores
+    - Norma de un vector
+    - Distancia entre dos vectores
+    - Revisar si una matriz es unitaria
+    - Revisar si una matriz es Hermitiana
+    - Producto tensor de dos matrices/vectores
+
+Para empezar:
+Esta libreria esta desarrollada para la solucion de operaaciones entre complejos sin el uso de la funcion complex,
+para su uso se debe tener en cuenta:
+
+Prerequesitos:
+Uno de los unicos requesitos para el uso de la libreria es tener instalado pyhton y configurado en la carpeta en la cual se quiere llamar a la libreria
+
+
+Intalacion:
+Para la instalacion de esta libreria se puede proceder de dos maneras.
+    1.En la carpeta en la que se desea descargar la libreria hacer el uso de git y el comando git clone https://github.com/Naetffy/VectSpace.git de forma que se obtiene de manera directa la descarga completa de todos los archivos del repositorio dentro de una carpeta llamada VectSpace, dentro de la cual esta la libreria.
+    2.En GitHub hacer la instalacion del repositorio descargandolo como un ZIP y extrayendo este en la carpeta en la cual se quiere hacer el uso de la libreria, esto nos creara una carpeta con el nombre "VectSpace-master", este lo cambiamos a "VectSpace".
+
+Implemetacion:
+Para implementar la libreria en un proyecto se debe hacer el uso de la siguiente sintaxis from VectSpace import Complex, posteriormente se puede hacer el uso de cualquiera de las siguientes funciones:
+    1. Suma = Complex.sum() 
+    Como  parametro acepta 4 numeros (Parte real del numero 1, Parte imaginaria del numero 1, Parte real del numero 2, Parte imaginaria del numero 2)
+
+    2. Resta = Complex.rest() 
+    Como  parametro acepta 4 numeros (Parte real del numero 1, Parte imaginaria del numero 1, Parte real del numero 2, Parte imaginaria del numero 2)
+
+    3. Producto = Complex.pro() 
+    Como  parametro acepta 4 numeros (Parte real del numero 1, Parte imaginaria del numero 1, Parte real del numero 2, Parte imaginaria del numero 2)
+
+    4. Divison = Complex.div() 
+    Como  parametro acepta 4 numeros (Parte real del numero 1, Parte imaginaria del numero 1, Parte real del numero 2, Parte imaginaria del numero 2)
+
+    5. Modulo = Complex.mod() 
+    Como parametro acepta 2 numeros (Parte real del numero complejo, Parte imaginaria del numero complejo)
+
+    6. Conjugado = Complex.conj()
+    Como parametro acepta 2 numeros (Parte real del numero complejo, Parte imaginaria del numero complejo)
+
+    7. Conversion de cartesianas a polares = Complex.ctop()
+    Como parametro acepta 2 numeros (Parte real del numero complejo, Parte imaginaria del numero complejo)
+    
+    8. Fase de un complejo = Complex.fase()
+    Como parametro acepta 2 numeros (Parte real del numero complejo, Parte imaginaria del numero complejo)
+
+Ejemplo del codigo para el funcionamiento:
+
+from VectSpace import Complex
+
+Resultado = Complex.sum(1,2,4,5)
+//Representa la suma entre (1+2i)+(4+5i)
+
+print(Resultado)
+
+//El output sera 5+7i
+
+Fin codigo ejemplo
+
+Hecho con:
+Math - Libreria que nos permite hacer operaciones matematicas como la raiz cuadrada
+
+
+Realizado por:
+Mateo Sebastian Forero Fuentes
+
